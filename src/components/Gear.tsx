@@ -1,5 +1,5 @@
 import React from 'react';
-// import {observer} from "mobx-react-lite";
+import {observer} from "mobx-react-lite";
 import RenderRoutes from "./RenderRoutes";
 import {BrowserRouter} from "react-router-dom";
 import {GearContext} from '../context';
@@ -17,11 +17,10 @@ const Gear = ({routers}: Props) => {
     return (
         <BrowserRouter>
             <GearContext.Provider value={{gearStore}}>
-                {/*<RenderRoutes routers={routers}/>*/}
-                GearApp
+                <RenderRoutes routers={routers}/>
             </GearContext.Provider>
         </BrowserRouter>
     )
 }
 
-export default Gear;
+export default observer(Gear);

@@ -13,14 +13,14 @@ module.exports = {
         extensions: ['.ts', '.tsx']
     },
     externals: {
-        react: 'react',
-        "react-dom": 'react-dom',
-        "react-router-dom": 'react-router-dom',
-        "@types/react-router-dom": "@types/react-router-dom",
-        mobx: "mobx",
-        "mobx-react-lite": "mobx-react-lite",
-        i18next: "i18next",
-        "react-i18next": "react-i18next"
+        react: 'commonjs react',
+        "react-dom": 'commonjs react-dom',
+        "react-router-dom": 'commonjs react-router-dom',
+        "@types/react-router-dom": "commonjs @types/react-router-dom",
+        mobx: "commonjs mobx",
+        "mobx-react-lite": "commonjs mobx-react-lite",
+        i18next: "commonjs i18next",
+        "react-i18next": "commonjs react-i18next"
     },
     module: {
         rules: [
