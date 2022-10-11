@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const Page = React.lazy(() => import('./components/Page'));
-export {default as RenderRoutes} from './components/renderRoutes';
+export {default as RenderRoutes} from './components/RenderRoutes';
 export {default as getPages} from './components/getPages';
-export {default as App} from './components/App';
+export {default as Gear} from './components/Gear';
 export {default as useLocalStorage} from './hooks/useLocalStorage';
 export {default as routes_template} from './components/routes_template';
 export {default as i18n} from './components/i18n';

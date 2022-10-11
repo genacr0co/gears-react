@@ -14,11 +14,13 @@ module.exports = {
     },
     externals: {
         react: 'react',
-        "react-dom": "ReactDOM",
-        'mobx': "mobx",
-        'mobx-react-lite': "mobxReactLite",
-        'i18next': "i18next",
-        "react-i18next": "reactI18next"
+        "react-dom": 'react-dom',
+        "react-router-dom": 'react-router-dom',
+        "@types/react-router-dom": "@types/react-router-dom",
+        mobx: "mobx",
+        "mobx-react-lite": "mobx-react-lite",
+        i18next: "i18next",
+        "react-i18next": "react-i18next"
     },
     module: {
         rules: [

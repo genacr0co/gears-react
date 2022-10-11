@@ -1,20 +1,20 @@
 import React from 'react';
-import RenderRoutes from "./renderRoutes";
+import RenderRoutes from "./RenderRoutes";
 import Page from "./Page";
 import IRoute from "../models/IRoute";
 import ITemplate from "../models/ITemplate";
 
 const routes_template = (routers: IRoute[], templates?: ITemplate[]) => {
-    const template = {
-        templates: {
-            body: templates !== undefined ? <Page templates={templates}/> : <></>
-        },
-        routers: {
-            body: <RenderRoutes routers={routers}/>
-        }
+
+    const template: ITemplate = {
+        body: templates !== undefined ? <Page templates={templates}/> : <></>
     }
 
-    return [template.templates, template.routers];
+    const routers_template: ITemplate = {
+        body: <RenderRoutes routers={routers}/>
+    }
+
+    return [template, routers_template];
 }
 
 export default routes_template;
