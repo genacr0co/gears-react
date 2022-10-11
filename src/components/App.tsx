@@ -2,9 +2,9 @@ import React from 'react';
 import {observer} from "mobx-react-lite";
 import RenderRoutes from "./renderRoutes";
 import {BrowserRouter} from "react-router-dom";
-import {IRoute} from "../models/IRoute";
 import {GearContext} from '../context';
 import GearStore from "../stores/GearStore";
+import IRoute from "../models/IRoute";
 
 type Props = {
     routers: IRoute[];

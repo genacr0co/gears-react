@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import * as React from "react";
-import {IRoute} from "../models/IRoute";
+import IRoute from "../models/IRoute";
 
 type Props = {
     routers: IRoute[];

@@ -1,6 +1,6 @@
 import {makeAutoObservable} from "mobx";
-import {ILang} from "../../models/ILang";
 import i18n from "../../components/i18n";
+import ILang from "../../models/ILang";
 
 export default class LangStore {
     constructor() {
@@ -36,7 +36,7 @@ export default class LangStore {
         )
     }
 
-    public getResources() {
+    private getResources() {
         interface LooseObject {
             [key: string]: any
         }

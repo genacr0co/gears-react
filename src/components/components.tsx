@@ -1,5 +1,5 @@
 import React from "react";
-import {ITemplate} from "../models/ITemplate";
+import ITemplate from "../models/ITemplate";
 
 function get(template: ITemplate, key: number) {
     return (<React.Fragment key={key}>
