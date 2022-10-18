@@ -1,4 +1,4 @@
-import {components} from "./components";
+import components from "./components";
 import React from "react";
 import ITemplate from "../models/ITemplate";
 import {observer} from "mobx-react-lite";

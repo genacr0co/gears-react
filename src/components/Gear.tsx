@@ -12,7 +12,6 @@ type Props = {
 
 const Gear = ({routers}: Props) => {
     const gearStore = new GearStore();
-    console.log(routers)
 
     return (
         <BrowserRouter>

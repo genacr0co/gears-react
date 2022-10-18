@@ -10,8 +10,10 @@ function get(template: ITemplate, key: number) {
     );
 }
 
-export const components = {
+const components = {
     get(components: ITemplate[]) {
         return components.map((component, index) => get(component, index))
     },
 }
+
+export default components;

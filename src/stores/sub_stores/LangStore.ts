@@ -26,7 +26,6 @@ export default class LangStore {
 
     public setLanguages(values: ILang[]) {
         this.values = values;
-        console.log(values);
 
         i18n.init({
                 resources: this.getResources(),
