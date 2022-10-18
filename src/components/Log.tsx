@@ -1,10 +1,9 @@
-import {observer} from "mobx-react-lite";
-import React, {useContext} from "react";
-import {GearContext} from "../context";
+import React from "react";
+import GearStore from "../stores/GearStore";
 
 const log = (id: string, ...args: any) => {
 
-    const {gearStore} = useContext(GearContext);
+    const gearStore = new GearStore();
 
     gearStore.console.getLogs()?.some((e) => {
         if (e === id) {
@@ -12,7 +11,6 @@ const log = (id: string, ...args: any) => {
         }
     })
 
-    return <></>
 }
 
-export default observer(log);
+export default log;
