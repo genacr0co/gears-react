@@ -15,4 +15,13 @@ export default class LogsStore {
         this.logs = logs;
     }
 
+    public log(id: string, ...args: any) {
+        if (this.logs !== undefined) {
+            this.logs.some((e) => {
+                if (e === id) {
+                    console.log(...args)
+                }
+            })
+        }
+    }
 }
