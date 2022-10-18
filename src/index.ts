@@ -8,6 +8,7 @@ export {default as useLocalStorage} from './hooks/useLocalStorage';
 export {default as routes_template} from './components/routes_template';
 export {default as i18n} from './components/i18n';
 export {default as components} from './components/components';
+export {default as log} from './components/Log';
 
 export {default as GearStore} from './stores/GearStore';
 export {default as LangStore} from './stores/sub_stores/LangStore';
