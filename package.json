@@ -1,7 +1,11 @@
 {
   "name": "gears-react",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gena2002/gears-react.git"
+  },
   "main": "./dist/index.js",
   "scripts": {
     "pub": "webpack && npm version patch --no-git-tag-version && npm publish"
