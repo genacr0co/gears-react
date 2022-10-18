@@ -20,7 +20,8 @@ module.exports = {
         mobx: "mobx",
         "mobx-react-lite": "mobx-react-lite",
         i18next: "i18next",
-        "react-i18next": "react-i18next"
+        "react-i18next": "react-i18next",
+        "mobx-react": "mobx-react"
     },
     module: {
         rules: [
