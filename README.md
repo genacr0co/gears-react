@@ -25,9 +25,7 @@ After that, the following packages will be automatically installed in your proje
 You should add this to your `src/index.tsx`:
 
 ```js
-<Observer>
-    {() => <Gear routers={routers}/>}
-</Observer>
+<Gear routers={your_routers}/>
 ```
 
 ### Example
@@ -37,7 +35,6 @@ You should add this to your `src/index.tsx`:
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Observer} from 'mobx-react'
 import {Gear} from 'gears-react';
 import {routers} from "./routers";
 
@@ -47,10 +44,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <Observer>
-            {() => <Gear routers={routers}/>}
+            <Gear routers={routers}/>
             {/* The`routers` is function that should return us the routes: */}
-        </Observer>
     </React.StrictMode>
 );
 ```
