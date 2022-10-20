@@ -1,8 +1,8 @@
 import React from "react";
+import TGetPages from "../models/TGetPages";
 import Page from "./Page";
-import ITemplate from "../models/ITemplate";
 
-const getPages = (arrays: [string, ITemplate[]][]) => {
+const getPages = (arrays: TGetPages[]) => {
     return arrays.map(([path, templates]) => ({path: path, element: <Page templates={templates}/>}))
 }
 

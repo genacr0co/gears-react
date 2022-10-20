@@ -19,4 +19,5 @@ export {default as LogsStore} from './stores/sub_stores/LogsStore'; // ?
 export type {default as ILang} from './models/ILang'; // ?
 export type {default as IRoute} from './models/IRoute'; // ?
 export type {default as ITemplate} from './models/ITemplate'; // V
+export type {default as TGetPages} from './models/TGetPages'; // V
 

@@ -247,7 +247,7 @@ components.get(your_template) //I use in gears... For example in `Page`
 ```
 
 ```js
-<RenderRoutes templates={your_template}/> //I use in gears... For example in `Gear`
+<RenderRoutes routers={your_routers}/> //I use in gears... For example in `Gear`
 ```
 
 ### Stores of gears-react
@@ -263,4 +263,4 @@ components.get(your_template) //I use in gears... For example in `Page`
 
 ### Types and Interfaces
 
-`ILang` | `IRoute` | `ITemplate`
+`ILang` | `IRoute` | `ITemplate` | `TGetPages`
