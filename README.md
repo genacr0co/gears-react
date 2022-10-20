@@ -106,7 +106,7 @@ import React from "react";
 
 export const main_routers = (store: Store) => {
 
-    const array = [
+    const array:TGetPages[] = [
         ['/', home],
         ['/products/*', routes_template(product_routers)],
         ['/product_categories/*', routes_template(product_categories_routers)],
@@ -121,7 +121,7 @@ export const main_routers = (store: Store) => {
 
     function allow() {...}
 
-    let pages = allow();
+    let pages:TGetPages[] = diff();
     pages.push(['*', error])
     return getPages(pages)
 }
