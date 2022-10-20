@@ -20,6 +20,14 @@ After that, the following packages will be automatically installed in your proje
 `mobx-react-lite`
 `react-i18next`
 
+Also you have to add following parameter to `tsconfig.json`:
+```json
+    "compilerOptions": {
+        "experimentalDecorators": true, // this one
+        ...
+    }
+```
+
 ## 1. Gear Component
 
 You should add this to your `src/index.tsx`:
