@@ -8,11 +8,11 @@ export default class Loader {
         makeAutoObservable(this);
     }
 
-    public setLoading(bool: boolean) {
+    public set(bool: boolean) {
         this.isLoading = bool;
     }
 
-    public getLoading() {
+    public get() {
         return this.isLoading;
     }
 }
