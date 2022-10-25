@@ -31,6 +31,7 @@ export default class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
             this.set(response.data);
             return response;
         } catch (e: any) {
+            this.set({} as DATA_TYPE)
             return e?.response;
         } finally {
             this.loader.set(false)
