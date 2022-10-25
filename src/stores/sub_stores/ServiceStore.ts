@@ -28,7 +28,7 @@ export default class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
         try {
             this.loader.set(true)
             const response: any = await this.callback(params);
-            this.set(response?.data);
+            this.set(response.data);
             return response;
         } catch (e: any) {
             return e?.response;
