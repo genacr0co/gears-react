@@ -260,7 +260,7 @@ components.get(your_template) //I use in gears... For example in `Page`
 
 ### Stores of gears-react
 
-`GearStore` | `LangStore` | `AlertStore` | `Loader` | `StringValueStore` | `LogsStore`
+`GearStore` | `LangStore` | `AlertStore` | `Loader` | `StringValueStore` | `LogsStore` | `ServiceStore`
 
 ### Hooks
 `useLocalStorage`
