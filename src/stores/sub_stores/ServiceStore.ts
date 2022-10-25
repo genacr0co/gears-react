@@ -1,7 +1,7 @@
 import {makeAutoObservable} from "mobx";
 import Loader from "./Loader";
 
-export class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
+export default class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
     private readonly callback: (args: PARAMS_TYPE) => any;
     private readonly isLoading: boolean = false;
 
