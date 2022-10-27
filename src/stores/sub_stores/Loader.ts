@@ -1,7 +1,7 @@
 import {makeAutoObservable} from "mobx";
 
 export default class Loader {
-    private isLoading: boolean = false;
+    private isLoading: boolean = true;
 
     constructor(isLoading: boolean) {
         this.isLoading = isLoading;
