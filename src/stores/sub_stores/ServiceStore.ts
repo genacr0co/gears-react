@@ -3,15 +3,14 @@ import Loader from "./Loader";
 
 export default class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
     private readonly callback: (args: PARAMS_TYPE) => any;
-    private readonly isLoading: boolean = false;
+    public readonly loader;
 
     constructor(callback: (args: PARAMS_TYPE) => any, isLoading: boolean) {
         makeAutoObservable(this);
         this.callback = callback;
-        this.isLoading = isLoading;
+        this.loader = new Loader(isLoading);
     }
 
-    public readonly loader = new Loader(this.isLoading);
     private data = {} as DATA_TYPE;
 
     private set(data: DATA_TYPE) {
