@@ -18,6 +18,7 @@ module.exports = {
         "react-router-dom": 'react-router-dom',
         "@types/react-router-dom": "@types/react-router-dom",
         mobx: "mobx",
+        axios: "axios",
         "mobx-react-lite": "mobx-react-lite",
         i18next: "i18next",
         "react-i18next": "react-i18next",

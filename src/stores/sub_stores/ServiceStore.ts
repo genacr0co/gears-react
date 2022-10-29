@@ -1,5 +1,6 @@
 import {makeAutoObservable} from "mobx";
 import Loader from "./Loader";
+import {AxiosResponse} from "axios";
 
 export default class ServiceStore<PARAMS_TYPE extends any[], DATA_TYPE = any> {
     private readonly callback;
@@ -23,11 +24,11 @@ export default class ServiceStore<PARAMS_TYPE extends any[], DATA_TYPE = any> {
 
     public async request(
         ...params: PARAMS_TYPE
-    ): Promise<DATA_TYPE> {
+    ): Promise<AxiosResponse<DATA_TYPE>> {
         try {
             this.loader.set(true)
             const response = await this.callback(...params);
-            this.set(response);
+            this.set(response.data);
             return response;
         } catch (e: any) {
             this.set({} as DATA_TYPE)
