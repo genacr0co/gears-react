@@ -1,11 +1,11 @@
 import {makeAutoObservable} from "mobx";
 import Loader from "./Loader";
 
-export default class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
-    private readonly callback: (args: PARAMS_TYPE) => any;
+export default class ServiceStore<PARAMS_TYPE extends any[], DATA_TYPE = any> {
+    private readonly callback;
     public readonly loader;
 
-    constructor(callback: (args: PARAMS_TYPE) => any, isLoading: boolean) {
+    constructor(callback: (...args: PARAMS_TYPE) => any, isLoading: boolean) {
         makeAutoObservable(this);
         this.callback = callback;
         this.loader = new Loader(isLoading);
@@ -22,15 +22,16 @@ export default class ServiceStore<PARAMS_TYPE = any, DATA_TYPE = any> {
     }
 
     public async request(
-        params: PARAMS_TYPE
-    ) {
+        ...params: PARAMS_TYPE
+    ): Promise<DATA_TYPE> {
         try {
             this.loader.set(true)
-            const response: any = await this.callback(params);
-            this.set(response.data);
+            const response = await this.callback(...params);
+            this.set(response);
             return response;
         } catch (e: any) {
             this.set({} as DATA_TYPE)
+            console.log('error', e)
             return e?.response;
         } finally {
             this.loader.set(false)
