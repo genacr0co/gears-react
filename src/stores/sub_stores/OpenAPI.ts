@@ -1,8 +1,7 @@
 import {makeAutoObservable} from "mobx";
 import Loader from "./Loader";
-import {AxiosResponse} from "axios";
 
-export default class ServiceStore<PARAMS_TYPE extends any[], DATA_TYPE = any> {
+export default class OpenAPI<PARAMS_TYPE extends any[], DATA_TYPE = any> {
     private readonly callback;
     public readonly loader;
 
@@ -24,15 +23,15 @@ export default class ServiceStore<PARAMS_TYPE extends any[], DATA_TYPE = any> {
 
     public async request(
         ...params: PARAMS_TYPE
-    ): Promise<AxiosResponse<DATA_TYPE>> {
+    ): Promise<DATA_TYPE> {
         try {
             this.loader.set(true)
             const response = await this.callback(...params);
-            this.set(response.data);
+            this.set(response);
             return response;
         } catch (e: any) {
             this.set({} as DATA_TYPE)
-            return e?.response;
+            return e;
         } finally {
             this.loader.set(false)
         }
