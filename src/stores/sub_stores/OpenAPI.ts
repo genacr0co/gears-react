@@ -23,7 +23,7 @@ export default class OpenAPI<PARAMS_TYPE extends any[], DATA_TYPE = any> {
 
     public async request(
         ...params: PARAMS_TYPE
-    ): Promise<DATA_TYPE> {
+    ) {
         try {
             this.loader.set(true)
             const response = await this.callback(...params);

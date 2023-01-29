@@ -24,13 +24,13 @@ export default class LangStore {
         return this.values
     }
 
-    public setLanguages(values: ILang[]) {
+    public setLanguages(values: ILang[], fallbackLng: string) {
         this.values = values;
 
         i18n.init({
                 resources: this.getResources(),
                 lng: JSON.parse(localStorage.getItem('language')!),
-                fallbackLng: 'ru'
+                fallbackLng: fallbackLng
             }
         )
     }
