@@ -1,31 +1,24 @@
 import {makeAutoObservable} from "mobx";
-import i18n from "../../components/i18n";
-import ILang from "../../models/ILang";
+import i18n from "../../i18n/i18n";
+import {ILang} from "../../types/ILang";
 
 export default class LangStore {
     constructor() {
         makeAutoObservable(this);
     }
 
-    private value: string = '';
-
-    public set(value: string) {
-        i18n.changeLanguage(value);
-        this.value = value
-    }
-
-    public get() {
-        return this.value
-    }
-
-    private values: ILang[] = [];
+    private langs: ILang[] = [];
 
     public getAll() {
-        return this.values
+        return this.langs
     }
 
-    public setLanguages(values: ILang[], fallbackLng: string) {
-        this.values = values;
+    public get(value: string) {
+        return this.langs.find(lang => lang.value === value);
+    }
+
+    public init(langs: ILang[], fallbackLng: string) {
+        this.langs = langs;
 
         i18n.init({
                 resources: this.getResources(),

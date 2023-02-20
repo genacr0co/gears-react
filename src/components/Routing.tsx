@@ -1,25 +1,24 @@
 import {Route, Routes} from "react-router-dom";
 import * as React from "react";
-import IRoute from "../models/IRoute";
+import {IRoute} from "../lib/types/IRoute";
 
 type Props = {
-    routers: IRoute[];
+    routes: IRoute[];
+    fallback?: React.ReactNode
 }
 
-function RenderRoutes({routers}: Props) {
+export function Routing({routes, fallback}: Props) {
     return (
-        <React.Suspense fallback={<div>Загрузка...</div>}>
+        <React.Suspense fallback={fallback}>
             <Routes>
-                {routers.map((route: IRoute) =>
+                {routes.map((route: IRoute, index) =>
                     <Route
+                        key={index}
                         element={route.element}
                         path={route.path}
-                        key={route.path}
                     />
                 )}
             </Routes>
         </React.Suspense>
     )
 }
-
-export default RenderRoutes;

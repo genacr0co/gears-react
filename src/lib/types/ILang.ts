@@ -1,4 +1,4 @@
-export default interface ILang {
+export interface ILang {
     value: string,
     label: string,
     JSON: any

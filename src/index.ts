@@ -1,25 +1,24 @@
 import React from 'react'
 
-export const Page = React.lazy(() => import('./components/Page')); // ?
-export {default as RenderRoutes} from './components/RenderRoutes'; // ?
-export {default as getPages} from './components/getPages'; // V
-export {default as Gear} from './components/Gear'; // V
-export {default as useLocalStorage} from './hooks/useLocalStorage'; // ?
-export {default as routes_template} from './components/routes_template'; // V
-export {default as i18n} from './components/i18n'; // ?
-export {default as components} from './components/components'; // ?
+export const RenderPages = React.lazy(() => import('./components/RenderPages')); // ?
+export {Routing} from './components/Routing';
+export {getRoutes} from './components/getRoutes';
 
-export {default as GearStore} from './stores/GearStore'; // ?
-export {default as LangStore} from './stores/sub_stores/LangStore'; // ?
-export {default as AlertStore} from './stores/sub_stores/AlertStore'; // ?
-export {default as Loader} from './stores/sub_stores/Loader'; // ?
-export {default as StringValueStore} from './stores/sub_stores/StringValueStore'; // ?
-export {default as LogsStore} from './stores/sub_stores/LogsStore'; // ?
-export {default as ServiceStore} from './stores/sub_stores/ServiceStore'; // ? OpenAPI
-export {default as OpenAPI} from './stores/sub_stores/OpenAPI'; // ?
+export {useLocalStorage} from './lib/hooks/useLocalStorage';
 
-export type {default as ILang} from './models/ILang'; // ?
-export type {default as IRoute} from './models/IRoute'; // ?
-export type {default as ITemplate} from './models/ITemplate'; // V
-export type {default as TGetPages} from './models/TGetPages'; // V
+export {default as i18n} from './lib/i18n/i18n';
+
+export type {ILang} from './lib/types/ILang';
+export type {IRoute} from './lib/types/IRoute';
+export type {TPages} from './lib/types/TPages';
+export type {TGetPages} from './lib/types/TGetPages';
+
+export {withGears} from './lib/providers/with-gears';
+
+export {default as GearStore} from './lib/stores/GearStore';
+export {default as ServiceStore} from './lib/stores/sub_stores/ServiceStore';
+
+export {default as OpenAPI} from './lib/stores/sub_stores/OpenAPI';
+
+
 

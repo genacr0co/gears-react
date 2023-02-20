@@ -1,6 +1,5 @@
 import {makeAutoObservable} from "mobx";
 import Loader from "./Loader";
-import {AxiosResponse} from "axios";
 
 export default class ServiceStore<PARAMS_TYPE extends any[], DATA_TYPE = any> {
     private readonly callback;
