@@ -17,6 +17,10 @@ export default class LangStore {
         return this.langs.find(lang => lang.value === value);
     }
 
+    public changeLanguage(value: string) {
+        i18n.changeLanguage(value);
+    }
+
     public init(langs: ILang[], fallbackLng: string) {
         this.langs = langs;
 
